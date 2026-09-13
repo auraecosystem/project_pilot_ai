@@ -1,0 +1,7 @@
+#!/usr/bin/runhaskell
+import Wisp
+
+main :: IO ()
+main = interpreter >>= loop
+  where
+    loop i = getLine >>= i >>= putStrLn >> loop i
